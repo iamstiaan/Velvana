@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvana | Velvet Rituals from Bean to Body</title>
+    <title>Velvana | Exclusive Ritual Collections</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -29,11 +28,7 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
-        
-        /* Custom smooth hover transition overrides */
-        .premium-transition {
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+        .premium-transition { transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
     </style>
 </head>
 <body class="bg-cream text-podBrown font-sans antialiased overflow-x-hidden">
@@ -44,18 +39,10 @@
 
     <nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-podBrown/5 px-6 lg:px-16 py-5 flex justify-between items-center premium-transition">
         <div class="hidden lg:flex gap-8 text-xs tracking-[0.2em] uppercase font-medium">
-            <a href="#culinary" class="hover:text-softGold premium-transition relative group">
-                Culinary Line
-                <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold group-hover:w-full premium-transition"></span>
-            </a>
-            <a href="#bodycare" class="hover:text-softGold premium-transition relative group">
-                Body Care
-                <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold group-hover:w-full premium-transition"></span>
-            </a>
-            <a href="#ritual-sets" class="hover:text-softGold premium-transition relative group">
-                Curated Sets
-                <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-softGold group-hover:w-full premium-transition"></span>
-            </a>
+            <a href="#exclusive-gift" class="hover:text-softGold premium-transition relative group">The Velvet Box</a>
+            <a href="#skincare-line" class="hover:text-softGold premium-transition relative group">Personal Care</a>
+            <a href="#culinary-line" class="hover:text-softGold premium-transition relative group">Culinary Line</a>
+            <a href="#niche-apothecary" class="hover:text-softGold premium-transition relative group">Niche Apothecary</a>
         </div>
         
         <a href="#" class="font-serif text-3xl tracking-[0.15em] font-semibold text-podBrown flex items-center gap-0.5 justify-center">
@@ -63,334 +50,229 @@
         </a>
 
         <div class="flex items-center gap-6">
-            <a href="#story" class="hidden sm:inline-block text-xs tracking-[0.2em] uppercase text-podBrown/60 hover:text-podBrown premium-transition">Our Impact</a>
             <button class="hover:text-softGold premium-transition"><i data-lucide="search" class="w-4 h-4"></i></button>
             <button class="hover:text-softGold premium-transition relative flex items-center gap-2" onclick="toggleCartMenu()">
                 <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                <span id="cart-indicator" class="text-xs font-medium tracking-wider hidden sm:inline">(<span id="cart-count">0</span>)</span>
+                <span id="cart-indicator" class="text-xs font-medium tracking-wider">(<span id="cart-count">0</span>)</span>
             </button>
         </div>
     </nav>
 
-    <header class="relative min-h-[90vh] flex items-center bg-beige px-6 lg:px-16 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply">
-            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0,60 Q30,40 60,70 T100,50 L100,100 L0,100 Z" fill="#D4AF37" />
-            </svg>
-        </div>
-
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center pt-12 pb-16">
-            <div class="lg:col-span-6 space-y-8 text-left z-10">
+    <section id="exclusive-gift" class="min-h-[85vh] flex items-center bg-gradient-to-b from-beige via-cream to-cream px-6 lg:px-16 py-16">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6 z-10">
                 <div class="flex items-center gap-3">
                     <span class="w-8 h-[1px] bg-softGold"></span>
-                    <p class="text-xs tracking-[0.4em] uppercase text-softGold font-semibold">The Complete Senses Edition</p>
+                    <p class="text-xs tracking-[0.4em] uppercase text-softGold font-semibold">Limited Volume Release</p>
                 </div>
-                <h1 class="font-serif text-5xl md:text-7xl font-light tracking-wide leading-[1.15] text-charcoal">
-                    Velvet Rituals <br><span class="italic font-normal text-podBrown/80">From Bean to Body.</span>
+                <h1 class="font-serif text-4xl md:text-6xl font-light tracking-wide text-charcoal leading-tight">
+                    The Velvana Ritual <br><span class="italic font-normal text-podBrown/70">Full Senses Box Set</span>
                 </h1>
                 <p class="max-w-lg text-sm md:text-base text-podBrown/70 font-light leading-relaxed">
-                    Sourcing pure, Grade A Madagascan and regional African vanilla. Cultivated ethically, split meticulously, and crafted into uncompromised culinary items and rich, raw cosmetic formulas.
+                    Our masterwork presentation suite. Enclosed within a heavy, gold-leaf presentation box sits the entire introductory collective: two signature serum washes, a jar of orchid body soufflé, and a slow-aged glass flask of culinary extract.
                 </p>
-                <div class="pt-4 flex flex-col sm:flex-row gap-4">
-                    <a href="#bodycare" class="bg-podBrown text-cream text-center px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition shadow-sm">
-                        Shop Personal Care
-                    </a>
-                    <a href="#culinary" class="border border-podBrown/40 text-podBrown text-center px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-podBrown hover:text-cream premium-transition">
-                        Explore Culinary Arts
-                    </a>
+                <div class="py-4 border-y border-podBrown/10 flex justify-between items-center text-sm max-w-md">
+                    <span class="font-medium uppercase tracking-wider text-xs text-podBrown/60">Launch Tier Pricing</span>
+                    <span class="text-xl font-bold text-podBrown">R1,450</span>
                 </div>
-            </div>
-
-            <div class="lg:col-span-6 relative flex justify-center lg:justify-end">
-                <div class="w-full max-w-md bg-cream p-5 rounded-sm shadow-xl border border-podBrown/5 relative group">
-                    <div class="aspect-[4/5] bg-gradient-to-b from-beige to-cream rounded-sm flex items-center justify-center p-8 relative overflow-hidden">
-                        
-                        <div class="absolute inset-x-0 bottom-4 flex justify-center items-end gap-3 transform group-hover:scale-105 premium-transition">
-                            <div class="w-14 h-24 bg-podBrown rounded-sm relative shadow-md opacity-90 flex flex-col items-center justify-center border border-softGold/20">
-                                <div class="w-4 h-4 bg-softGold/40 rounded-full mb-2"></div>
-                                <div class="w-10 h-[1px] bg-cream/20"></div>
-                            </div>
-                            <div class="w-20 h-36 bg-[#EFE9E0] rounded-t-2xl rounded-b-md relative shadow-md flex flex-col items-center pt-6 border border-podBrown/10">
-                                <div class="w-4 h-6 bg-[#D8CEBF] absolute -top-5 rounded-t-sm"></div>
-                                <span class="text-[7px] font-serif uppercase tracking-widest text-podBrown/60">Velvana</span>
-                                <div class="w-12 h-[1px] bg-podBrown/10 mt-2"></div>
-                            </div>
-                            <div class="w-16 h-16 bg-cream rounded-sm shadow-md border border-podBrown/10 flex flex-col justify-between overflow-hidden">
-                                <div class="h-3 bg-podBrown w-full"></div>
-                                <span class="text-[5px] uppercase tracking-wider text-center pb-2 text-podBrown/40">African Orchid</span>
-                            </div>
-                        </div>
-
-                        <div class="absolute top-4 right-4 bg-softGold/10 border border-softGold/30 text-podBrown text-[10px] uppercase font-medium tracking-widest px-3 py-1 backdrop-blur-sm">
-                            Gourmet & Skincare
-                        </div>
-                    </div>
-                    <div class="mt-4 flex justify-between items-center">
-                        <div>
-                            <p class="font-serif text-lg tracking-wide">The Velvana Ritual Box</p>
-                            <p class="text-xs text-podBrown/50">Limited-Edition Launch Collective</p>
-                        </div>
-                        <span class="text-sm font-semibold tracking-wide text-softGold">Custom Tiers Available</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="bg-podBrown text-cream py-10 px-6 border-b border-softGold/20">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div class="space-y-1">
-                <p class="font-serif italic text-base text-softGold">Madagascar SAVA</p>
-                <p class="text-[10px] tracking-[0.2em] uppercase text-cream/60">Direct Origin Sourced</p>
-            </div>
-            <div class="space-y-1">
-                <p class="font-serif italic text-base text-softGold">Radical Equity</p>
-                <p class="text-[10px] tracking-[0.2em] uppercase text-cream/60">Fairer Farmer Ecosystems</p>
-            </div>
-            <div class="space-y-1">
-                <p class="font-serif italic text-base text-softGold">Slow-Aged</p>
-                <p class="text-[10px] tracking-[0.2em] uppercase text-cream/60">12-Month Extraction</p>
-            </div>
-            <div class="space-y-1">
-                <p class="font-serif italic text-base text-softGold">Clean Apothecary</p>
-                <p class="text-[10px] tracking-[0.2em] uppercase text-cream/60">Zero Synthetic Fillers</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="bodycare" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
-        <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
-            <p class="text-xs tracking-[0.3em] uppercase text-softGold font-semibold">The Bathhouse Ritual</p>
-            <h2 class="font-serif text-3xl md:text-4xl font-light tracking-wide">The Personal Care Family</h2>
-            <div class="w-12 h-[1px] bg-softGold mx-auto mt-4"></div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="group bg-beige/30 p-6 rounded-sm hover:bg-beige/60 premium-transition border border-podBrown/5 flex flex-col justify-between">
-                <div>
-                    <div class="aspect-[3/4] bg-cream flex items-center justify-center p-8 relative overflow-hidden shadow-inner">
-                        <div class="w-36 h-56 bg-[#FAF6F0] rounded-t-3xl rounded-b-2xl relative shadow-md flex flex-col justify-center items-center p-5 border border-podBrown/5 group-hover:scale-105 premium-transition">
-                            <div class="w-6 h-10 bg-[#E3DAC9] absolute -top-8 rounded-t-sm"></div>
-                            <div class="w-14 h-3 bg-[#E3DAC9] absolute -top-3"></div>
-                            <span class="text-xs font-serif tracking-[0.2em] text-center uppercase font-bold text-podBrown/80">Velvana</span>
-                            <span class="text-[6px] tracking-[0.15em] text-center uppercase text-podBrown/60 mt-1.5 font-medium">Salt Water Vanilla</span>
-                            <div class="w-16 h-[0.5px] bg-podBrown/20 my-3"></div>
-                            <span class="text-[5px] text-center text-podBrown/50 font-light leading-normal px-2">Skin Reviving Serum Wash infused with multi-algae compounds.</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex justify-between items-start">
-                        <div>
-                            <h3 class="font-serif text-lg tracking-wide text-charcoal">Salt Water Vanilla Serum Wash</h3>
-                            <p class="text-xs text-podBrown/60 mt-1 font-light">Purify, refine, and revive dehydrated surface barriers.</p>
-                        </div>
-                        <p class="text-sm font-semibold tracking-wider text-podBrown/80">R340</p>
-                    </div>
-                    <p class="text-[11px] font-medium text-softGold tracking-wider mt-2 uppercase">500ml Standard Size</p>
-                </div>
-                <button onclick="addItemToBag('Salt Water Vanilla Serum Wash', 340)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                    Add to Bag
-                </button>
-            </div>
-
-            <div class="group bg-beige/30 p-6 rounded-sm hover:bg-beige/60 premium-transition border border-podBrown/5 flex flex-col justify-between">
-                <div>
-                    <div class="aspect-[3/4] bg-cream flex items-center justify-center p-8 relative overflow-hidden shadow-inner">
-                        <div class="w-40 h-40 bg-white/95 rounded-sm relative shadow-md flex flex-col justify-between p-4 border border-podBrown/5 group-hover:scale-105 premium-transition">
-                            <div class="h-6 bg-podBrown w-full absolute top-0 left-0 rounded-t-sm flex items-center px-3">
-                                <span class="text-[6px] tracking-widest text-cream uppercase">Premium Skincare</span>
-                            </div>
-                            <div class="text-center mt-8">
-                                <span class="text-sm font-serif tracking-[0.1em] font-bold text-podBrown">Velvana</span>
-                                <p class="text-[6px] tracking-widest uppercase text-softGold mt-1">African Orchid Body Soufflé</p>
-                            </div>
-                            <span class="text-[5px] text-center text-podBrown/40 font-light">Rich Restorative Whipped Butter</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex justify-between items-start">
-                        <div>
-                            <h3 class="font-serif text-lg tracking-wide text-charcoal">African Orchid Body Soufflé</h3>
-                            <p class="text-xs text-podBrown/60 mt-1 font-light">Ultra-whipped moisturizing balm infused with orchid seed extract.</p>
-                        </div>
-                        <p class="text-sm font-semibold tracking-wider text-podBrown/80">R480</p>
-                    </div>
-                    <p class="text-[11px] font-medium text-softGold tracking-wider mt-2 uppercase">250ml Glass Jar</p>
-                </div>
-                <button onclick="addItemToBag('African Orchid Body Soufflé', 480)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                    Add to Bag
-                </button>
-            </div>
-
-            <div class="group bg-beige/30 p-6 rounded-sm hover:bg-beige/60 premium-transition border border-podBrown/5 flex flex-col justify-between">
-                <div>
-                    <div class="aspect-[3/4] bg-cream flex items-center justify-center p-8 relative overflow-hidden shadow-inner">
-                        <div class="w-24 h-48 bg-gradient-to-b from-[#C49A45]/30 to-[#2C1B14]/80 rounded-sm relative shadow-md flex flex-col justify-center items-center p-3 border border-podBrown/10 group-hover:scale-105 premium-transition">
-                            <div class="w-6 h-10 bg-podBrown absolute -top-8 rounded-sm"></div>
-                            <div class="w-4 h-4 bg-softGold absolute -top-12 rounded-full"></div>
-                            <span class="text-[9px] font-serif tracking-widest text-cream uppercase font-bold">Velvana</span>
-                            <span class="text-[5px] tracking-wider text-softGold uppercase mt-1">Caviar Seed Serum</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex justify-between items-start">
-                        <div>
-                            <h3 class="font-serif text-lg tracking-wide text-charcoal">Caviar Vanilla Seed Glow Serum</h3>
-                            <p class="text-xs text-podBrown/60 mt-1 font-light">Concentrated multi-use ritual elixir for deep dermal luminosity.</p>
-                        </div>
-                        <p class="text-sm font-semibold tracking-wider text-podBrown/80">R620</p>
-                    </div>
-                    <p class="text-[11px] font-medium text-softGold tracking-wider mt-2 uppercase">50ml Dropper Vial</p>
-                </div>
-                <button onclick="addItemToBag('Caviar Vanilla Seed Glow Serum', 620)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                    Add to Bag
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="culinary" class="py-24 bg-beige/40 px-6 lg:px-16 border-y border-podBrown/5">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
-                <div>
-                    <p class="text-xs tracking-[0.3em] uppercase text-softGold font-semibold mb-2">Gourmet Essentials</p>
-                    <h2 class="font-serif text-3xl md:text-4xl font-light tracking-wide">The Pure Fine Culinary Line</h2>
-                </div>
-                <p class="max-w-xs text-xs text-podBrown/60 font-light leading-relaxed">
-                    Traceable, pristine flavor elements created for master chefs, premium home bakers, and luxury confectioneries.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="group bg-cream p-6 rounded-sm border border-podBrown/5 flex flex-col justify-between shadow-sm hover:shadow-md premium-transition">
-                    <div>
-                        <div class="aspect-[3/4] bg-podBrown/5 flex items-center justify-center p-8 relative overflow-hidden">
-                            <div class="w-28 h-48 bg-gradient-to-b from-[#4A2E22] to-[#1E110B] rounded-xl relative shadow-lg flex flex-col justify-end items-center p-4 border border-softGold/10 group-hover:scale-105 premium-transition">
-                                <div class="w-8 h-8 bg-[#C4A482] absolute -top-6 rounded-sm"></div>
-                                <div class="w-16 h-12 bg-cream/95 p-1 mb-4 rounded-sm flex flex-col items-center justify-center border border-podBrown/10 shadow-inner">
-                                    <span class="text-[7px] font-serif font-bold tracking-widest uppercase">Velvana</span>
-                                    <span class="text-[4px] tracking-widest text-softGold uppercase mt-0.5">Slow-Aged Extract</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-between items-start">
-                            <div>
-                                <h3 class="font-serif text-lg tracking-wide text-charcoal">Slow-Aged Pure Vanilla Extract</h3>
-                                <p class="text-xs text-podBrown/60 mt-1 font-light">Triple-filtered, cold-pressed extract matured for 12 complete months.</p>
-                            </div>
-                            <p class="text-sm font-semibold tracking-wider text-podBrown/80">R290</p>
-                        </div>
-                        <p class="text-[11px] font-medium text-softGold tracking-wider mt-2 uppercase">100ml Glass Flask</p>
-                    </div>
-                    <button onclick="addItemToBag('Slow-Aged Pure Vanilla Extract', 290)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                        Add to Bag
-                    </button>
-                </div>
-
-                <div class="group bg-cream p-6 rounded-sm border border-podBrown/5 flex flex-col justify-between shadow-sm hover:shadow-md premium-transition">
-                    <div>
-                        <div class="aspect-[3/4] bg-podBrown/5 flex items-center justify-center p-8 relative overflow-hidden">
-                            <div class="w-12 h-56 bg-[#1A0F0A] rounded-full relative shadow-md flex flex-col justify-start items-center pt-10 border border-softGold/20 group-hover:rotate-6 premium-transition">
-                                <div class="w-8 h-[2px] bg-softGold/40 mb-2"></div>
-                                <span class="text-[7px] font-serif tracking-[0.25em] text-cream uppercase rotate-90 origin-center whitespace-nowrap mt-16">BOURBON GRADE A</span>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-between items-start">
-                            <div>
-                                <h3 class="font-serif text-lg tracking-wide text-charcoal">Premium Grade A Bourbon Pods</h3>
-                                <p class="text-xs text-podBrown/60 mt-1 font-light">High-moisture, plump pods dripping with natural oils & inner caviar.</p>
-                            </div>
-                            <p class="text-sm font-semibold tracking-wider text-podBrown/80">R220</p>
-                        </div>
-                        <p class="text-[11px] font-medium text-softGold tracking-wider mt-2 uppercase">3-Pack Wax Envelope</p>
-                    </div>
-                    <button onclick="addItemToBag('Premium Grade A Bourbon Pods', 220)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                        Add to Bag
-                    </button>
-                </div>
-
-                <div class="group bg-cream p-6 rounded-sm border border-podBrown/5 flex flex-col justify-between shadow-sm hover:shadow-md premium-transition">
-                    <div>
-                        <div class="aspect-[3/4] bg-podBrown/5 flex items-center justify-center p-8 relative overflow-hidden">
-                            <div class="w-24 h-40 bg-cream border border-podBrown/20 rounded-md relative shadow-md flex flex-col justify-between overflow-hidden group-hover:scale-105 premium-transition">
-                                <div class="h-8 bg-podBrown w-full flex items-center justify-center text-[8px] tracking-[0.2em] text-cream uppercase font-medium">Velvana Gourmet</div>
-                                <div class="p-3 text-center mb-4">
-                                    <p class="text-[6px] font-medium tracking-widest text-podBrown/60 uppercase">Pure Powder Infusion</p>
-                                    <div class="w-6 h-[0.5px] bg-softGold mx-auto mt-2"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-between items-start">
-                            <div>
-                                <h3 class="font-serif text-lg tracking-wide text-charcoal">Pure Raw Infusion Powder</h3>
-                                <p class="text-xs text-podBrown/60 mt-1 font-light">100% freshly pulverized vanilla beans. Zero added sugars or starch stabilizers.</p>
-                            </div>
-                            <p class="text-sm font-semibold tracking-wider text-podBrown/80">R310</p>
-                        </div>
-                        <p class="text-[11px] font-medium text-softGold tracking-wider mt-2 uppercase">50g Aluminum Tin</p>
-                    </div>
-                    <button onclick="addItemToBag('Pure Raw Infusion Powder', 310)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                        Add to Bag
+                <div class="pt-2">
+                    <button onclick="addItemToBag('The Velvana Ritual Full Senses Box Set', 1450)" class="bg-podBrown text-cream px-10 py-4 text-xs tracking-[0.2em] uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition shadow-lg">
+                        Acquire the Vault
                     </button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="ritual-sets" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-12 items-center bg-beige p-8 lg:p-16 rounded-sm shadow-sm border border-podBrown/5">
-            <div class="lg:col-span-5 space-y-6">
-                <span class="text-xs tracking-[0.3em] uppercase text-softGold font-semibold block">Gifting & Devotion</span>
-                <h2 class="font-serif text-3xl md:text-4xl font-light text-charcoal leading-tight">The Velvana Senses Box Set</h2>
-                <p class="text-sm text-podBrown/70 font-light leading-relaxed">
-                    Experience the unedited dual crossover. A masterfully enclosed gold-foil presentation set housing our flagship Salt Water Serum Wash, an entry flask of Slow-Aged Extract, and two premium whole pods. Crafted cleanly for luxury gifting or personal initiation.
-                </p>
-                <div class="py-2 border-y border-podBrown/10 flex justify-between items-center text-sm">
-                    <span class="font-medium">Total Ritual Inclusion Price</span>
-                    <span class="text-lg font-bold text-podBrown">R950</span>
-                </div>
-                <button onclick="addItemToBag('The Velvana Senses Box Set', 950)" class="w-full bg-podBrown text-cream py-4 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
-                    Acquire The Ritual Box
-                </button>
-            </div>
-            <div class="lg:col-span-7 flex justify-center">
-                <div class="w-full max-w-md aspect-square bg-gradient-to-tr from-podBrown to-charcoal rounded-sm shadow-2xl p-12 flex flex-col justify-between relative overflow-hidden border border-softGold/30">
-                    <div class="absolute -right-12 -top-12 w-48 h-48 border border-softGold/20 rounded-full pointer-events-none"></div>
+            <div class="lg:col-span-6 flex justify-center lg:justify-end">
+                <div class="w-full max-w-md aspect-square bg-gradient-to-tr from-[#D4AF37] via-[#E6C65B] to-[#F3E19E] rounded-sm shadow-2xl p-12 flex flex-col justify-between relative border border-white/20 group hover:scale-[1.02] premium-transition">
+                    <div class="absolute -right-16 -top-16 w-48 h-48 border border-white/10 rounded-full pointer-events-none"></div>
                     <div class="flex justify-between items-start">
-                        <span class="text-[10px] font-serif tracking-[0.3em] text-softGold uppercase font-semibold">VELVANA</span>
-                        <span class="text-[8px] tracking-widest text-cream/40 uppercase">Aura No. 1</span>
+                        <span class="text-[11px] font-serif tracking-[0.3em] text-podBrown uppercase font-bold">VELVANA</span>
+                        <span class="text-[9px] tracking-widest text-podBrown/60 uppercase font-medium">Bespoke Collection</span>
                     </div>
-                    <div class="text-center space-y-2">
-                        <div class="w-10 h-10 border border-softGold rounded-full mx-auto flex items-center justify-center mb-2">
-                            <div class="w-1.5 h-1.5 bg-softGold rounded-full"></div>
+                    <div class="text-center space-y-3">
+                        <div class="w-12 h-12 border border-podBrown rounded-full mx-auto flex items-center justify-center mb-2">
+                            <div class="w-2 h-2 bg-podBrown rounded-full"></div>
                         </div>
-                        <p class="font-serif text-2xl text-cream tracking-wide font-light">THE FULL SENSES EDITION</p>
-                        <p class="text-[9px] tracking-[0.2em] text-softGold uppercase">Culinary Arts & Personal Care Collective</p>
+                        <p class="font-serif text-3xl text-podBrown tracking-wide font-light">THE VELVANA RITUAL</p>
+                        <p class="text-[10px] tracking-[0.2em] text-podBrown uppercase font-semibold">Full Senses Collection</p>
                     </div>
-                    <div class="text-[8px] text-cream/50 tracking-wider text-center uppercase border-t border-cream/10 pt-4">
-                        Handcrafted & Sequenced in South Africa
+                    <div class="text-[9px] text-podBrown/60 tracking-wider text-center uppercase border-t border-podBrown/10 pt-4 font-medium">
+                        Gold Foil Leaf Embellished Case
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="story" class="py-28 bg-podBrown text-cream px-6 lg:px-16 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5 mix-blend-color-dodge pointer-events-none">
-            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0,50 C30,20 70,80 100,50 L100,100 L0,100 Z" fill="#FFFFFF"/>
-            </svg>
-        </div>
-        
-        <div class="max-w-3xl mx-auto space-y-8 relative z-10">
-            <div class="flex justify-center items-center gap-4">
-                <span class="w-6 h-[1px] bg-softGold"></span>
-                <p class="text-xs tracking-[0.4em] uppercase text-softGold font-semibold">Radical Traceability</p>
-                <span class="w-6 h-[1px] bg-softGold"></span>
+    <section id="skincare-line" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-podBrown/5">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+            <div>
+                <p class="text-xs tracking-[0.3em] uppercase text-softGold font-semibold mb-2">Collection One</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-light tracking-wide">The Personal Care Line</h2>
             </div>
-            <h2 class="font-serif text-3xl md:text-5xl font-light tracking-wide leading-tight">Zero Friction. Total Equity.</h2>
-            <p class="text-sm md:text-base text-cream/80 font-light leading-relaxed max-w-2xl mx-auto">
-                We believe that premium consumption must align gracefully with local farming communities. Velvana operates via a direct-trade framework within Madagascar and East African sub-regions—completely dismantling unnecessary broker margins. This ensures every pod returns equitable security directly to smallholder agroforestry systems.
+            <p class="max-w-xs text-xs text-podBrown/60 font-light leading-relaxed">
+                Premium, cream-toned pump vessels and frosted glass jars engineered to restore skin health through raw vanilla antioxidants.
             </p>
-            <div class="pt-4">
-                <span class="font-serif italic text-softGold block text-xl tracking-wide">"The luxury of knowing exactly where your ritual began."</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="group bg-beige/30 p-8 rounded-sm hover:bg-beige/50 premium-transition flex flex-col justify-between border border-podBrown/5">
+                <div class="aspect-[4/3] bg-cream flex justify-center items-end p-8 relative overflow-hidden shadow-inner">
+                    <div class="flex gap-4 items-end transform group-hover:scale-105 premium-transition">
+                        <div class="w-28 h-44 bg-[#FAF6F0] rounded-t-3xl rounded-b-xl relative shadow-md flex flex-col justify-center items-center p-4 border border-podBrown/5">
+                            <div class="w-6 h-8 bg-[#E3DAC9] absolute -top-6 rounded-t-sm"></div>
+                            <span class="text-[9px] font-serif tracking-widest uppercase font-bold text-podBrown">Velvana</span>
+                            <span class="text-[5px] tracking-widest uppercase text-podBrown/50 mt-1">Serum Wash</span>
+                        </div>
+                        <div class="w-28 h-44 bg-[#FAF6F0] rounded-t-3xl rounded-b-xl relative shadow-md flex flex-col justify-center items-center p-4 border border-podBrown/5">
+                            <div class="w-6 h-8 bg-[#E3DAC9] absolute -top-6 rounded-t-sm"></div>
+                            <span class="text-[9px] font-serif tracking-widest uppercase font-bold text-podBrown">Velvana</span>
+                            <span class="text-[5px] tracking-widest uppercase text-podBrown/50 mt-1">Serum Wash</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-xl tracking-wide">Salt Water Vanilla Serum Body Wash</h3>
+                        <p class="text-xs text-podBrown/60 mt-1 font-light">Purifying sea minerals combined with skin-reviving African vanilla botanical extracts.</p>
+                    </div>
+                    <span class="text-sm font-semibold text-podBrown">R340</span>
+                </div>
+                <button onclick="addItemToBag('Salt Water Vanilla Serum Body Wash', 340)" class="w-full mt-6 bg-podBrown text-cream py-3.5 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
+                    Add to Bag
+                </button>
+            </div>
+
+            <div class="group bg-beige/30 p-8 rounded-sm hover:bg-beige/50 premium-transition flex flex-col justify-between border border-podBrown/5">
+                <div class="aspect-[4/3] bg-cream flex justify-center items-center p-8 relative overflow-hidden shadow-inner">
+                    <div class="w-44 h-36 bg-white/90 rounded-sm relative shadow-md flex flex-col justify-between border border-podBrown/5 transform group-hover:scale-105 premium-transition overflow-hidden">
+                        <div class="h-8 bg-podBrown w-full flex items-center px-4">
+                            <span class="text-[7px] tracking-[0.25em] text-softGold uppercase font-medium">Restorative Balm</span>
+                        </div>
+                        <div class="text-center p-4">
+                            <span class="text-base font-serif tracking-wider font-bold text-charcoal">Velvana</span>
+                            <p class="text-[7px] tracking-widest uppercase text-podBrown/60 mt-1">African Orchid Body Soufflé</p>
+                        </div>
+                        <div class="h-2 bg-[#E3DAC9] w-full"></div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between items-start">
+                    <div>
+                        <h3 class="font-serif text-xl tracking-wide">African Orchid Body Soufflé</h3>
+                        <p class="text-xs text-podBrown/60 mt-1 font-light">Deeply whipped barrier hydration cream using premium cold-extracted seed lipids.</p>
+                    </div>
+                    <span class="text-sm font-semibold text-podBrown">R480</span>
+                </div>
+                <button onclick="addItemToBag('African Orchid Body Soufflé', 480)" class="w-full mt-6 bg-podBrown text-cream py-3.5 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
+                    Add to Bag
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="culinary-line" class="py-24 bg-beige/40 px-6 lg:px-16 border-y border-podBrown/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+                <p class="text-xs tracking-[0.3em] uppercase text-softGold font-semibold">Pure Pastry & Gastronomy</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-light tracking-wide">The Fine Culinary Collection</h2>
+                <div class="w-12 h-[1px] bg-softGold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group bg-cream p-8 rounded-sm border border-podBrown/5 flex flex-col justify-between shadow-sm">
+                    <div class="aspect-[4/3] bg-podBrown/5 flex items-center justify-center p-6 shadow-inner">
+                        <div class="w-32 h-44 bg-gradient-to-b from-[#3D2216] to-[#130A06] rounded-2xl relative shadow-lg flex flex-col justify-end items-center p-4 border border-white/5 transform group-hover:scale-105 premium-transition">
+                            <div class="w-8 h-6 bg-[#D4AF37] absolute -top-4 rounded-sm border-b border-black/20 shadow"></div>
+                            <div class="w-20 bg-cream/95 p-1.5 mb-4 rounded-sm flex flex-col items-center justify-center border border-podBrown/10">
+                                <span class="text-[8px] font-serif font-bold tracking-widest uppercase text-charcoal">Velvana</span>
+                                <span class="text-[4px] tracking-widest text-podBrown/60 uppercase font-semibold">Slow-Aged Extract</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-serif text-xl tracking-wide">Slow-Aged Vanilla Extract</h3>
+                            <p class="text-xs text-podBrown/60 mt-1 font-light">Grade A Madagascar pods cold-matured over 12 months for high-integrity baking profile.</p>
+                        </div>
+                        <span class="text-sm font-semibold text-podBrown">R290</span>
+                    </div>
+                    <button onclick="addItemToBag('Slow-Aged Vanilla Extract', 290)" class="w-full mt-6 bg-podBrown text-cream py-3.5 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
+                        Add to Bag
+                    </button>
+                </div>
+
+                <div class="group bg-cream p-8 rounded-sm border border-podBrown/5 flex flex-col justify-between shadow-sm">
+                    <div class="aspect-[4/3] bg-podBrown/5 flex items-center justify-center p-6 shadow-inner">
+                        <div class="w-20 h-44 bg-gradient-to-b from-[#A47E2B]/40 to-[#23140E] rounded-md relative shadow-md flex flex-col justify-center items-center p-3 border border-white/10 transform group-hover:scale-105 premium-transition">
+                            <div class="w-6 h-8 bg-podBrown absolute -top-6 rounded-sm"></div>
+                            <div class="w-4 h-4 bg-[#D4AF37] absolute -top-10 rounded-full shadow-md"></div>
+                            <span class="text-[8px] font-serif tracking-widest text-cream uppercase font-bold text-center">Velvana</span>
+                            <span class="text-[4px] tracking-wider text-softGold uppercase mt-1">Caviar Serum</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="font-serif text-xl tracking-wide">Madagascan Caviar Vanilla Seed Serum</h3>
+                            <p class="text-xs text-podBrown/60 mt-1 font-light">Pure inner seed scrapings suspended in premium oil formulation for seamless infusion.</p>
+                        </div>
+                        <span class="text-sm font-semibold text-podBrown">R620</span>
+                    </div>
+                    <button onclick="addItemToBag('Madagascan Caviar Vanilla Seed Serum', 620)" class="w-full mt-6 bg-podBrown text-cream py-3.5 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
+                        Add to Bag
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="niche-apothecary" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+            <div>
+                <p class="text-xs tracking-[0.3em] uppercase text-softGold font-semibold mb-2">Artisanal Niche</p>
+                <h2 class="font-serif text-3xl md:text-4xl font-light tracking-wide">The Apothecary Accents</h2>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="group flex flex-col lg:flex-row bg-beige/20 p-6 rounded-sm border border-podBrown/5 gap-6 items-center">
+                <div class="w-full lg:w-1/2 aspect-square bg-cream flex justify-center items-center rounded-sm shadow-inner relative p-4">
+                    <div class="w-36 h-36 bg-[#EFECE6] border border-podBrown/10 shadow-md relative flex flex-col items-center justify-center p-4 transform group-hover:rotate-3 premium-transition">
+                        <div class="absolute inset-x-4 h-8 border-y border-podBrown/10 bg-white/20"></div>
+                        <div class="w-10 h-10 bg-[#BC973E] rounded-full shadow flex items-center justify-center z-10 border border-white/20">
+                            <span class="text-[5px] text-white font-serif font-bold tracking-widest">V</span>
+                        </div>
+                        <span class="text-[8px] font-medium tracking-widest uppercase text-podBrown/60 mt-3 z-10">Artisanal Soap</span>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 flex flex-col justify-between h-full py-2">
+                    <div class="space-y-2">
+                        <h3 class="font-serif text-xl tracking-wide">Vanilla & Sea Salt Artisanal Block</h3>
+                        <p class="text-xs text-podBrown/60 font-light leading-relaxed">Raw textured cold-process block wrapped in linen paper and stamped with a custom wax emblem.</p>
+                        <p class="text-xs font-semibold text-softGold uppercase tracking-wider">R180</p>
+                    </div>
+                    <button onclick="addItemToBag('Vanilla & Sea Salt Artisanal Block', 180)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
+                        Add to Bag
+                    </button>
+                </div>
+            </div>
+
+            <div class="group flex flex-col lg:flex-row bg-beige/20 p-6 rounded-sm border border-podBrown/5 gap-6 items-center">
+                <div class="w-full lg:w-1/2 aspect-square bg-cream flex justify-center items-center rounded-sm shadow-inner relative p-4">
+                    <div class="w-10 h-40 bg-gradient-to-b from-[#503427] to-[#1E110B] rounded-sm shadow-md border border-white/5 relative flex flex-col items-center justify-end pb-8 transform group-hover:scale-105 premium-transition">
+                        <div class="w-8 h-12 bg-charcoal absolute top-0 rounded-t-sm"></div>
+                        <span class="text-[6px] tracking-[0.3em] uppercase text-softGold rotate-90 origin-center mb-6 font-bold whitespace-nowrap">VELVANA ESSENCE</span>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 flex flex-col justify-between h-full py-2">
+                    <div class="space-y-2">
+                        <h3 class="font-serif text-xl tracking-wide">Velvet Pure Essence Roller Oil</h3>
+                        <p class="text-xs text-podBrown/60 font-light leading-relaxed">Concentrated absolute essence roll-on designed for intimate personal scent application points.</p>
+                        <p class="text-xs font-semibold text-softGold uppercase tracking-wider">R260</p>
+                    </div>
+                    <button onclick="addItemToBag('Velvet Pure Essence Roller Oil', 260)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">
+                        Add to Bag
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -410,76 +292,21 @@
                 <span>Estimated Subtotal</span>
                 <span id="cart-subtotal">R0</span>
             </div>
-            <p class="text-[10px] text-podBrown/50 font-light leading-normal">Taxes calculated during formal secure gateway checkouts. Free domestic courier services apply automatically for orders exceeding R1200.</p>
-            <button onclick="executeMockCheckout()" class="w-full bg-podBrown text-cream py-4 text-xs tracking-widest uppercase font-semibold hover:bg-softGold hover:text-podBrown premium-transition shadow-md">
+            <button onclick="alert('Initiating secure banking routing...')" class="w-full bg-podBrown text-cream py-4 text-xs tracking-widest uppercase font-semibold hover:bg-softGold hover:text-podBrown premium-transition shadow-md">
                 Proceed To Secure Checkout
             </button>
         </div>
     </div>
 
-    <div id="action-toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-charcoal text-cream text-xs tracking-widest uppercase py-3.5 px-8 shadow-2xl rounded-sm opacity-0 pointer-events-none premium-transition z-50">
-        Item Reserved Safely
-    </div>
-
-    <footer class="bg-cream border-t border-podBrown/10 py-16 px-6 lg:px-16 text-xs text-podBrown/60">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 mb-12">
-            <div class="md:col-span-5 space-y-4">
-                <h4 class="font-serif text-xl text-podBrown tracking-widest font-semibold">VELVANA<span class="text-softGold">.</span></h4>
-                <p class="max-w-xs font-light leading-relaxed">Crafting cohesive dual-line vanilla experiences. Sourced with devotion across Africa, formulated proudly in Durban, South Africa.</p>
-            </div>
-            <div class="md:col-span-3 space-y-3">
-                <h5 class="text-podBrown uppercase font-semibold tracking-wider text-[11px]">Corporate Governance</h5>
-                <ul class="space-y-2 font-light">
-                    <li><a href="#" class="hover:text-podBrown premium-transition">CIPC Company Filing</a></li>
-                    <li><a href="#" class="hover:text-podBrown premium-transition">Madagascar Fair-Trade Pact</a></li>
-                    <li><a href="#" class="hover:text-podBrown premium-transition">B2B Wholesale Inquiries</a></li>
-                </ul>
-            </div>
-            <div class="md:col-span-4 space-y-3">
-                <h5 class="text-podBrown uppercase font-semibold tracking-wider text-[11px]">The Velvana Dispatch</h5>
-                <p class="font-light leading-relaxed">Join our inner circle for traceable batch alerts and seasonal harvest releases.</p>
-                <div class="flex border-b border-podBrown/30 pb-1 pt-1">
-                    <input type="email" placeholder="Your institutional email" class="bg-transparent border-none text-xs w-full focus:outline-none text-podBrown font-light placeholder:text-podBrown/30">
-                    <button class="text-podBrown hover:text-softGold premium-transition uppercase font-medium tracking-wider text-[10px]">Join</button>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto pt-8 border-t border-podBrown/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-light">
-            <p>&copy; 2026 Velvana Essentials Ltd. All Rights Reserved.</p>
-            <div class="flex gap-6 uppercase tracking-widest text-[10px]">
-                <a href="#" class="hover:text-podBrown premium-transition">Privacy Protocol</a>
-                <a href="#" class="hover:text-podBrown premium-transition">Terms of Care</a>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // Init icon rendering
         lucide.createIcons();
-
         let globalBag = [];
         let accumulatedTotal = 0;
 
         function addItemToBag(title, numericPrice) {
             globalBag.push({ name: title, price: numericPrice });
             accumulatedTotal += numericPrice;
-            
-            // Re-render badges
             document.getElementById('cart-count').innerText = globalBag.length;
-            const indicator = document.getElementById('cart-indicator');
-            const countBadge = document.getElementById('cart-indicator');
-            
-            // Pop Toast Notification
-            const toastElement = document.getElementById('action-toast');
-            toastElement.innerText = `Reserved: ${title}`;
-            toastElement.classList.remove('opacity-0');
-            toastElement.classList.add('opacity-100');
-            
-            setTimeout(() => {
-                toastElement.classList.remove('opacity-100');
-                toastElement.classList.add('opacity-0');
-            }, 2500);
-
             rebuildCartDrawerUI();
         }
 
@@ -497,40 +324,21 @@
         function rebuildCartDrawerUI() {
             const wrapper = document.getElementById('cart-items-container');
             const emptyMsg = document.getElementById('empty-cart-msg');
-            const subtotalText = document.getElementById('cart-subtotal');
-            
-            subtotalText.innerText = `R${accumulatedTotal}`;
+            document.getElementById('cart-subtotal').innerText = `R${accumulatedTotal}`;
 
-            if(globalBag.length === 0) {
-                emptyMsg.style.display = 'block';
-                return;
-            }
-            
+            if(globalBag.length === 0) { emptyMsg.style.display = 'block'; return; }
             emptyMsg.style.display = 'none';
-            // Wipe variable row additions cleanly
+            
             const existingRows = wrapper.querySelectorAll('.dynamic-item-row');
             existingRows.forEach(row => row.remove());
 
             globalBag.forEach(item => {
                 const itemRow = document.createElement('div');
-                itemRow.className = "dynamic-item-row flex justify-between items-center py-2.5 border-b border-podBrown/5";
-                itemRow.innerHTML = `
-                    <span class="font-medium text-podBrown">${item.name}</span>
-                    <span class="font-semibold text-podBrown/80">R${item.price}</span>
-                `;
+                itemRow.className = "dynamic-item-row flex justify-between items-center py-2.5 border-b border-podBrown/5 animate-fade-in";
+                itemRow.innerHTML = `<span class="font-medium text-podBrown">${item.name}</span><span class="font-semibold text-podBrown/80">R${item.price}</span>`;
                 wrapper.appendChild(itemRow);
             });
-        }
-
-        function executeMockCheckout() {
-            if(globalBag.length === 0) {
-                alert("Your selection bag is currently empty. Please allocate a premium ritual item above.");
-                return;
-            }
-            alert(`Initiating secure institutional routing for your R${accumulatedTotal} order collection.`);
         }
     </script>
 </body>
 </html>
-
-```
