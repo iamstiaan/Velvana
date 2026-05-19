@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELVANA | Product Line & Interactive Storefront</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        beige: '#F5EFE6',
+                        podBrown: '#2C1B14',
+                        softGold: '#D4AF37',
+                        charcoal: '#1E110B',
+                        amethystPurple: '#3B2F4A',
+                        seafoamTeal: '#4A6B6C'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+        .premium-transition { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="bg-cream text-podBrown font-sans antialiased overflow-x-hidden">
+
+    <nav class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-podBrown/5 px-6 lg:px-16 py-5 flex justify-between items-center">
+        <div class="hidden lg:flex gap-8 text-xs tracking-[0.2em] uppercase font-semibold text-podBrown/70">
+            <a href="#core-collection" class="hover:text-softGold premium-transition">Core Collection</a>
+            <a href="#expanded-matrix" class="hover:text-softGold premium-transition">The Variations</a>
+        </div>
+        
+        <a href="#" class="font-serif text-3xl tracking-[0.18em] font-bold text-podBrown flex items-center justify-center">
+            VELVANA<span class="text-softGold font-sans text-sm">.</span>
+        </a>
+
+        <div class="flex items-center gap-6">
+            <button class="hover:text-softGold premium-transition relative flex items-center gap-2" onclick="toggleCartMenu()">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                <span id="cart-indicator" class="text-xs font-semibold tracking-wider">(<span id="cart-count">0</span>)</span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="core-collection" class="py-20 bg-beige/30 border-b border-podBrown/5 px-6 lg:px-16">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-[1px] bg-softGold"></span>
+                    <p class="text-xs tracking-[0.3em] uppercase text-softGold font-bold">The Flagship Baseline</p>
+                </div>
+                <h1 class="font-serif text-4xl lg:text-5xl font-light text-charcoal tracking-wide leading-tight">
+                    Salt Water Vanilla <br><span class="italic font-normal text-podBrown/70">Skin Reviving Serum</span>
+                </h1>
+                <p class="text-sm text-podBrown/70 font-light leading-relaxed">
+                    Our hallmark presentation. Formulated to balance micro-minerals from natural sea salt with active Madagascar vanilla fruit extracts to gently cleanse without disrupting the skin barrier.
+                </p>
+                <div class="py-4 border-y border-podBrown/10 flex justify-between items-center text-sm max-w-sm">
+                    <span class="font-semibold uppercase tracking-wider text-xs text-podBrown/50">Retail Premium Tier</span>
+                    <span class="text-xl font-bold text-podBrown">R340</span>
+                </div>
+                <button onclick="addItemToBag('Salt Water Vanilla Serum Wash (500ml)', 340)" class="bg-podBrown text-cream px-10 py-4 text-xs tracking-[0.2em] uppercase font-semibold hover:bg-softGold hover:text-podBrown premium-transition shadow-lg">
+                    Secure Core Variant
+                </button>
+            </div>
+
+            <div class="lg:col-span-6 flex justify-center lg:justify-end">
+                <div class="bg-white p-10 rounded-sm border border-podBrown/5 shadow-xl w-full max-w-md relative">
+                    <div class="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-podBrown/5 to-transparent rounded-b-sm"></div>
+                    <div class="flex justify-center gap-8 items-end h-64">
+                        <div class="w-28 h-48 bg-[#FAF6F0] rounded-t-3xl rounded-b-xl relative shadow-md flex flex-col justify-center items-center p-4 border border-podBrown/5">
+                            <div class="w-6 h-8 bg-[#E3DAC9] absolute -top-6 rounded-t-sm"></div>
+                            <span class="text-[9px] font-serif tracking-widest uppercase font-bold text-podBrown">Velvana</span>
+                            <span class="text-[4px] tracking-widest uppercase text-podBrown/50 mt-1">Serum Wash</span>
+                        </div>
+                        <div class="w-28 h-48 bg-[#FAF6F0] rounded-t-3xl rounded-b-xl relative shadow-md flex flex-col justify-center items-center p-4 border border-podBrown/5">
+                            <div class="w-6 h-8 bg-[#E3DAC9] absolute -top-6 rounded-t-sm"></div>
+                            <span class="text-[9px] font-serif tracking-widest uppercase font-bold text-podBrown">Velvana</span>
+                            <span class="text-[4px] tracking-widest uppercase text-podBrown/50 mt-1">Serum Wash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expanded-matrix" class="py-24 px-6 lg:px-16 max-w-6xl mx-auto">
+        <div class="text-center max-w-xl mx-auto mb-20 space-y-2">
+            <p class="text-xs tracking-[0.3em] uppercase text-softGold font-bold">Line Extensions</p>
+            <h2 class="font-serif text-3xl font-light tracking-wide text-charcoal">The Evaluated Portfolio Variants</h2>
+            <div class="w-12 h-[1px] bg-softGold mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12">
+            
+            <div class="group bg-beige/20 p-6 border border-podBrown/5 rounded-sm flex flex-col justify-between premium-transition hover:shadow-md">
+                <div>
+                    <div class="aspect-[3/4] bg-cream flex items-center justify-center p-8 shadow-inner relative overflow-hidden">
+                        <div class="w-28 h-48 bg-gradient-to-b from-[#2A2035] to-[#150F1C] rounded-t-3xl rounded-b-xl relative shadow-lg flex flex-col justify-center items-center p-4 border border-white/5 transform group-hover:scale-105 premium-transition">
+                            <div class="w-6 h-8 bg-charcoal absolute -top-6 rounded-t-sm"></div>
+                            <span class="text-[9px] font-serif tracking-widest uppercase font-bold text-softGold">Velvana</span>
+                            <span class="text-[4px] tracking-widest uppercase text-white/40 mt-1">Lavender & Mud</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <h3 class="font-serif text-lg text-charcoal tracking-wide">Lavender & Bota-Mud Cleanser</h3>
+                        <span class="text-sm font-semibold text-podBrown/85">R350</span>
+                    </div>
+                    <p class="text-xs text-podBrown/60 font-light mt-2 leading-relaxed">
+                        Pore-refining calming composition suspended inside a deep amethyst glossy matrix with gold-gilded foil accents.
+                    </p>
+                </div>
+                <button onclick="addItemToBag('Lavender & Bota-Mud Cleanser (500ml)', 350)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">Add to Bag</button>
+            </div>
+
+            <div class="group bg-beige/20 p-6 border border-podBrown/5 rounded-sm flex flex-col justify-between premium-transition hover:shadow-md">
+                <div>
+                    <div class="aspect-[3/4] bg-cream flex items-center justify-center p-8 shadow-inner relative overflow-hidden">
+                        <div class="w-24 h-40 bg-[#FAF6F0] rounded-t-2xl rounded-b-lg relative shadow-md flex flex-col justify-center items-center p-4 border border-podBrown/5 transform group-hover:scale-105 premium-transition">
+                            <div class="w-6 h-6 bg-[#D4AF37] absolute -top-4 rounded-t-sm shadow-sm"></div>
+                            <span class="text-[8px] font-serif tracking-widest uppercase font-bold text-podBrown">Velvana</span>
+                            <span class="text-[4px] tracking-widest uppercase text-podBrown/40 mt-1">Slow-Aged Extract</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <h3 class="font-serif text-lg text-charcoal tracking-wide">Bourbon Vanilla Culinary Extract</h3>
+                        <span class="text-sm font-semibold text-podBrown/85">R250</span>
+                    </div>
+                    <p class="text-xs text-podBrown/60 font-light mt-2 leading-relaxed">
+                        Pure Grade A culinary orchid pods cold-matured over 12 months for premium pastry formulation.
+                    </p>
+                </div>
+                <button onclick="addItemToBag('Bourbon Vanilla Culinary Extract (250ml)', 250)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">Add to Bag</button>
+            </div>
+
+            <div class="group bg-beige/20 p-6 border border-podBrown/5 rounded-sm flex flex-col justify-between premium-transition hover:shadow-md">
+                <div>
+                    <div class="aspect-[3/4] bg-cream flex items-center justify-center p-8 shadow-inner relative overflow-hidden">
+                        <div class="w-28 h-48 bg-[#F4EFE6] rounded-t-3xl rounded-b-xl relative shadow-md flex flex-col justify-center items-center p-4 border border-seafoamTeal/20 transform group-hover:scale-105 premium-transition">
+                            <div class="w-6 h-8 bg-seafoamTeal/30 absolute -top-6 rounded-t-sm"></div>
+                            <span class="text-[9px] font-serif tracking-widest uppercase font-bold text-podBrown">Velvana</span>
+                            <span class="text-[4px] tracking-widest uppercase text-seafoamTeal mt-1">Sea Salt Scrub</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <h3 class="font-serif text-lg text-charcoal tracking-wide">Sea Salt & Bota-Seed Scrub</h3>
+                        <span class="text-sm font-semibold text-podBrown/85">R350</span>
+                    </div>
+                    <p class="text-xs text-podBrown/60 font-light mt-2 leading-relaxed">
+                        Micro-exfoliating daily treatment incorporating fine-grain Mediterranean minerals and seafoam typography accent lines.
+                    </p>
+                </div>
+                <button onclick="addItemToBag('Sea Salt & Bota-Seed Scrub (500ml)', 350)" class="w-full mt-6 bg-podBrown text-cream py-3 text-xs tracking-widest uppercase font-medium hover:bg-softGold hover:text-podBrown premium-transition">Add to Bag</button>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-cream z-50 shadow-2xl border-l border-podBrown/10 transform translate-x-full premium-transition flex flex-col justify-between hidden">
+        <div class="p-6 overflow-y-auto flex-grow">
+            <div class="flex justify-between items-center border-b border-podBrown/10 pb-4">
+                <h3 class="font-serif text-xl tracking-wide font-semibold">Your Selection Bag</h3>
+                <button onclick="toggleCartMenu()" class="text-podBrown/60 hover:text-podBrown premium-transition"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div id="cart-items-container" class="py-6 space-y-4 text-sm font-light text-podBrown/70">
+                <p id="empty-cart-msg" class="italic text-podBrown/50 text-center py-12">Your reservation bag is currently empty.</p>
+            </div>
+        </div>
+        <div class="p-6 bg-beige border-t border-podBrown/10 space-y-4">
+            <div class="flex justify-between font-medium text-base tracking-wide">
+                <span>Estimated Subtotal</span>
+                <span id="cart-subtotal">R0</span>
+            </div>
+            <button onclick="alert('Routing secure transaction...')" class="w-full bg-podBrown text-cream py-4 text-xs tracking-widest uppercase font-semibold hover:bg-softGold hover:text-podBrown premium-transition shadow-md">Proceed To Checkout</button>
+        </div>
+    </div>
+
+    <footer class="bg-cream border-t border-podBrown/10 py-12 px-6 lg:px-16 text-center text-xs text-podBrown/50">
+        <p>&copy; 2026 Velvana Essentials Ltd. Custom Architectural Portfolio. All Assets Protected.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        let globalBag = [];
+        let accumulatedTotal = 0;
+
+        function addItemToBag(title, numericPrice) {
+            globalBag.push({ name: title, price: numericPrice });
+            accumulatedTotal += numericPrice;
+            document.getElementById('cart-count').innerText = globalBag.length;
+            rebuildCartDrawerUI();
+        }
+
+        function toggleCartMenu() {
+            const drawer = document.getElementById('cart-drawer');
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                setTimeout(() => drawer.classList.remove('translate-x-full'), 10);
+            } else {
+                drawer.classList.add('translate-x-full');
+                setTimeout(() => drawer.classList.add('hidden'), 300);
+            }
+        }
+
+        function rebuildCartDrawerUI() {
+            const wrapper = document.getElementById('cart-items-container');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            document.getElementById('cart-subtotal').innerText = `R${accumulatedTotal}`;
+
+            if(globalBag.length === 0) { emptyMsg.style.display = 'block'; return; }
+            emptyMsg.style.display = 'none';
+            
+            const existingRows = wrapper.querySelectorAll('.dynamic-item-row');
+            existingRows.forEach(row => row.remove());
+
+            globalBag.forEach(item => {
+                const itemRow = document.createElement('div');
+                itemRow.className = "dynamic-item-row flex justify-between items-center py-2 border-b border-podBrown/5 font-light";
+                itemRow.innerHTML = `<span class="text-podBrown font-medium">${item.name}</span><span class="font-semibold">R${item.price}</span>`;
+                wrapper.appendChild(itemRow);
+            });
+        }
+    </script>
+</body>
+</html>
