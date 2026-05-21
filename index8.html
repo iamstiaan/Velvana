@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvana | Ocean Vanilla Ritual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --cream: #f8f5f0;
+            --beige: #e8d9c8;
+            --brown: #5c4636;
+            --gold: #d4a373;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--cream);
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--brown);
+            letter-spacing: 4px;
+        }
 
+        /* HERO - Based on 1st Image (Beige + Pink) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(92,70,54,0.45), rgba(92,70,54,0.45)), 
+                        url('https://i.imgur.com/placeholder.jpg') center/cover; /* Replace with your 1st image URL */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero-content h1 {
+            font-size: 4.2rem;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            padding: 16px 48px;
+            background: white;
+            color: var(--brown);
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 100px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--brown);
+            margin-bottom: 3rem;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+        .product-card:hover {
+            transform: translateY(-12px);
+        }
+        .product-img {
+            height: 420px;
+            background-size: cover;
+            background-position: center;
+        }
+        .product-info {
+            padding: 28px;
+            text-align: center;
+        }
+        .product-info h3 {
+            color: var(--brown);
+            font-size: 1.65rem;
+            margin-bottom: 8px;
+        }
+        .price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        .add-btn {
+            margin-top: 15px;
+            width: 100%;
+            padding: 14px;
+            background: var(--brown);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        footer {
+            background: #3f2a1e;
+            color: #ddd;
+            text-align: center;
+            padding: 60px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">VELVANA</div>
+            <div>
+                <a href="#" style="margin:0 15px; color:var(--brown); text-decoration:none;">Shop</a>
+                <a href="#" style="margin:0 15px; color:var(--brown); text-decoration:none;">Rituals</a>
+                <a href="#" style="margin:0 15px; color:var(--brown); text-decoration:none;">Journal</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO - Branding Concept from 1st Image -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>VELVANA</h1>
+            <p>Salt Water Vanilla • Coastal Luxury Skincare</p>
+            <p style="font-size:1.1rem; opacity:0.95;">Where ocean minerals embrace warm vanilla — refined, radiant, ritualistic.</p>
+            <button class="btn" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
+                Explore the Collection
+            </button>
+        </div>
+    </section>
+
+    <!-- PRODUCT COLLECTION -->
+    <section class="section" id="collection">
+        <h2 class="section-title">Signature Collection</h2>
+        <div class="products-grid">
+
+            <!-- Product 1 - Beige Vanilla -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder1.jpg');"></div>
+                <div class="product-info">
+                    <h3>Salt Water Vanilla</h3>
+                    <p>Skin Reviving Serum Body Wash</p>
+                    <p class="price">$48 • 500 mL</p>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 - Purple Lavender -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder2.jpg');"></div>
+                <div class="product-info">
+                    <h3>Lavender Açaí Mood</h3>
+                    <p>Rose Refining & Calming Body Cleanser</p>
+                    <p class="price">$52 • 500 mL</p>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 - Vanilla Ritual Oil -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder3.jpg');"></div>
+                <div class="product-info">
+                    <h3>Nomadica Vanilla Ritual</h3>
+                    <p>Glow Body Oil</p>
+                    <p class="price">$65</p>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 - Sea Salt Duo -->
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder4.jpg');"></div>
+                <div class="product-info">
+                    <h3>Sea Salt & Sun Dew</h3>
+                    <p>Exfoliating Daily Cleanser</p>
+                    <p class="price">$55 • 500 mL</p>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 2.2rem; margin-bottom: 10px;">VELVANA</p>
+        <p>Premium Coastal Skincare • Ocean Vanilla Ritual</p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2026 • Johannesburg, South Africa</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.add-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert("✨ Added to your Velvana ritual cart");
+            });
+        });
+    </script>
+</body>
+  </html>
