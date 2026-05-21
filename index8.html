@@ -1,409 +1,643 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvana | Premium Coastal Skincare</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        :root {
-            --cream: #f8f5f0;
-            --beige: #e8d9c8;
-            --brown: #5c4636;
-            --gold: #d4a373;
-            --dark-brown: #3f2a1e;
-            --light-pink: #f5d5d0;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: var(--cream);
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: white;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-        }
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--brown);
-            letter-spacing: 4px;
-        }
-        nav a {
-            margin: 0 15px;
-            color: var(--brown);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: var(--gold);
-        }
+VELVANA — Premium Product Gallery & Brand Presentation
 
-        /* HERO SECTION */
-        .hero {
-            margin-top: 80px;
-            min-height: 70vh;
-            background: linear-gradient(135deg, #d4a373 0%, #c89a6a 50%, #b8855f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1), transparent);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        .hero-content h1 {
-            font-size: 4.5rem;
-            letter-spacing: 12px;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        .hero-content p {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            opacity: 0.95;
-            letter-spacing: 1px;
-        }
-        .hero-content .tagline {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            font-style: italic;
-            margin-bottom: 2.5rem;
-        }
-        .btn {
-            padding: 16px 48px;
-            background: white;
-            color: var(--brown);
-            border: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-        }
+Brand Positioning
 
-        .section {
-            padding: 120px 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            color: var(--brown);
-            margin-bottom: 4rem;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
+VELVANA is positioned as a modern luxury body-care and wellness brand focused on clean aesthetics, elevated self-care, calming sensory experiences, and premium minimalist packaging. The presentation direction combines Scandinavian simplicity, luxury spa influence, and contemporary beauty branding.
 
-        /* PREMIUM PRODUCTS GRID */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 50px;
-            margin-bottom: 60px;
-        }
 
-        .product-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.18);
-        }
+---
 
-        .product-img {
-            height: 480px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .product-img.beige {
-            background: linear-gradient(135deg, #d4a373, #c89a6a);
-        }
-        .product-img.pink {
-            background: linear-gradient(135deg, #f5b5c8, #ed97b8);
-        }
-        .product-img.green {
-            background: linear-gradient(135deg, #b8d4c8, #a3c5b8);
-        }
+Homepage / Gallery Structure
 
-        .product-info {
-            padding: 40px 32px;
-            text-align: center;
-            background: #fafaf8;
-        }
-        .product-name {
-            color: var(--brown);
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .product-type {
-            color: var(--gold);
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .product-description {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            min-height: 60px;
-        }
-        .product-size {
-            color: #777;
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            font-weight: 500;
-        }
-        .price {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 24px;
-        }
+1. Hero Section
 
-        .add-btn {
-            width: 100%;
-            padding: 16px 24px;
-            background: var(--brown);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 1px;
-        }
-        .add-btn:hover {
-            background: var(--dark-brown);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
+Main Headline
 
-        /* BENEFITS SECTION */
-        .benefits-section {
-            background: linear-gradient(135deg, #f5f3f0 0%, #eee9e3 100%);
-            padding: 100px 20px;
-            margin-top: 80px;
-        }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .benefit-card {
-            text-align: center;
-        }
-        .benefit-icon {
-            font-size: 3.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        .benefit-card h3 {
-            color: var(--brown);
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-        .benefit-card p {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
+Elevated Body Care, Inspired by Modern Rituals
 
-        footer {
-            background: var(--dark-brown);
-            color: #ddd;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        footer h2 {
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-            color: white;
-            font-weight: 700;
-        }
-        footer p {
-            margin: 8px 0;
-            font-size: 1.05rem;
-        }
-        footer .tagline {
-            color: var(--gold);
-            font-weight: 600;
-            margin-top: 20px;
-        }
+Supporting Text
 
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            .section-title {
-                font-size: 2.2rem;
-            }
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
+VELVANA transforms daily body care into a luxurious ritual through refined formulations, sophisticated fragrances, and minimalist design.
 
-    <header>
-        <nav>
-            <div class="logo">VELVANA</div>
-            <div>
-                <a href="#collection">Shop</a>
-                <a href="#benefits">Rituals</a>
-                <a href="#footer">Contact</a>
-            </div>
-        </nav>
-    </header>
+CTA Buttons
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>VELVANA</h1>
-            <p>Premium Coastal Skincare</p>
-            <p class="tagline">Where ocean minerals embrace warm vanilla — refined, radiant, ritualistic.</p>
-            <button class="btn" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
-                ✨ Explore the Collection
-            </button>
-        </div>
-    </section>
+Shop Collection
 
-    <!-- PRODUCT COLLECTION -->
-    <section class="section" id="collection">
-        <h2 class="section-title">Signature Collection</h2>
-        <div class="products-grid">
+Discover Rituals
 
-            <!-- Product 1: Nourishing Body Wash -->
-            <div class="product-card">
-                <div class="product-img beige"></div>
-                <div class="product-info">
-                    <div class="product-type">• NOURISHING •</div>
-                    <h3 class="product-name">Body Wash</h3>
-                    <p class="product-description">Gently cleanses and nourishes for soft, healthy-looking skin. Daily care for all skin types.</p>
-                    <div class="product-size">500 mL</div>
-                    <p class="price">$48</p>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
+View Ingredients
 
-            <!-- Product 2: Soothing Body Lotion -->
-            <div class="product-card">
-                <div class="product-img pink"></div>
-                <div class="product-info">
-                    <div class="product-type">• SOOTHING •</div>
-                    <h3 class="product-name">Body Lotion</h3>
-                    <p class="product-description">Hydrates and softens skin while calming and protecting its natural moisture barrier.</p>
-                    <div class="product-size">500 mL</div>
-                    <p class="price">$52</p>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
 
-            <!-- Product 3: Exfoliating Body Scrub -->
-            <div class="product-card">
-                <div class="product-img green"></div>
-                <div class="product-info">
-                    <div class="product-type">• EXFOLIATING •</div>
-                    <h3 class="product-name">Body Scrub</h3>
-                    <p class="product-description">Gently exfoliates to remove dead skin cells and reveal smoother, brighter skin.</p>
-                    <div class="product-size">500 mL</div>
-                    <p class="price">$55</p>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
+Hero Background Ideas
 
-        </div>
-    </section>
+Soft beige gradient
 
-    <!-- BENEFITS SECTION -->
-    <section class="benefits-section" id="benefits">
-        <h2 class="section-title">Why Choose Velvana?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">🌊</div>
-                <h3>Ocean Minerals</h3>
-                <p>Infused with premium sea salt and coastal botanicals for radiant skin transformation.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🌿</div>
-                <h3>Natural Ingredients</h3>
-                <p>Sustainably sourced, cruelty-free, and ethically crafted for conscious beauty.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">✨</div>
-                <h3>Premium Quality</h3>
-                <p>Luxurious formulations designed for the modern ritual of self-care and wellness.</p>
-            </div>
-        </div>
-    </section>
+Natural stone textures
 
-    <footer id="footer">
-        <h2>VELVANA</h2>
-        <p>Premium Coastal Skincare</p>
-        <p class="tagline">Salt Water Vanilla • Oceanic Luxury</p>
-        <p style="margin-top: 30px; opacity: 0.7;">© 2026 • Johannesburg, South Africa</p>
-    </footer>
+Water ripple shadows
 
-    <script>
-        document.querySelectorAll('.add-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                alert("✨ Added to your Velvana ritual cart");
-            });
-        });
-    </script>
-</body>
-</html>
+Luxury bathroom aesthetic
+
+Floating product bottles with soft lighting
+
+
+
+---
+
+Product Collection Presentation
+
+Collection Categories
+
+1. Hydration Collection
+
+Soft hydration-focused products designed for daily nourishment.
+
+Products:
+
+Velvet Almond Body Wash
+
+Rose Silk Body Lotion
+
+Coconut Milk Hydrating Cream
+
+Vanilla Sea Salt Moisture Wash
+
+
+Visual Direction:
+
+Beige
+
+Soft blush pink
+
+Cream ivory
+
+Warm neutral tones
+
+
+
+---
+
+2. Botanical Collection
+
+Nature-inspired cleansing and exfoliation range.
+
+Products:
+
+Sage Mineral Scrub
+
+Green Tea Body Cleanser
+
+Eucalyptus Recovery Wash
+
+Matcha Skin Polish
+
+
+Visual Direction:
+
+Sage green
+
+Botanical shadows
+
+Stone textures
+
+Matte packaging
+
+
+
+---
+
+3. Night Ritual Collection
+
+Relaxation and calming body-care products.
+
+Products:
+
+Lavender Sleep Wash
+
+Orchid Night Serum
+
+Midnight Jasmine Lotion
+
+Calm Ritual Oil
+
+
+Visual Direction:
+
+Lavender purple
+
+Muted gold
+
+Satin reflections
+
+Ambient lighting
+
+
+
+---
+
+4. Signature Luxe Collection
+
+Premium statement products.
+
+Products:
+
+Gold Honey Repair Wash
+
+Velvet Amber Body Oil
+
+Pearl Silk Exfoliator
+
+Vanilla Cashmere Cream
+
+
+Visual Direction:
+
+Bronze metallics
+
+Gold caps
+
+Soft reflections
+
+Luxury editorial photography
+
+
+
+---
+
+Product Card Structure
+
+Each product card should contain:
+
+Front Information
+
+Product Name
+
+Product Category
+
+Key Benefit
+
+Volume (500ML)
+
+Hero Ingredient
+
+Minimalist VELVANA logo
+
+
+Expanded Hover Details
+
+Ingredient Highlights
+
+Skin Benefits
+
+Fragrance Notes
+
+Texture Description
+
+Usage Recommendations
+
+Dermatologically Tested Badge
+
+Vegan / Cruelty-Free Icons
+
+
+
+---
+
+Example Product Copy
+
+Velvet Almond Nourishing Body Wash
+
+Description
+
+A creamy moisture-lock body wash infused with almond milk, oat extract, and shea hydration technology to gently cleanse while preserving the skin barrier.
+
+Benefits
+
+Deep hydration
+
+Restores softness
+
+Non-stripping formula
+
+Suitable for daily use
+
+
+Fragrance Profile
+
+Warm almond, vanilla cream, and soft musk.
+
+Key Ingredients
+
+Almond Milk
+
+Oat Extract
+
+Shea Butter
+
+Vitamin E
+
+
+
+---
+
+Sage Mineral Exfoliating Scrub
+
+Description
+
+A revitalizing exfoliating treatment combining sea minerals and botanical extracts to smooth texture and reveal naturally radiant skin.
+
+Benefits
+
+Gentle exfoliation
+
+Improves skin texture
+
+Brightens dull skin
+
+Spa-like finish
+
+
+Fragrance Profile
+
+Fresh sage, eucalyptus, and white cedar.
+
+Key Ingredients
+
+Sea Salt Minerals
+
+Green Tea Extract
+
+Sage Oil
+
+Bamboo Powder
+
+
+
+---
+
+Premium Website Sections
+
+About the Brand
+
+Suggested Copy
+
+VELVANA was created to elevate everyday self-care through premium body rituals inspired by modern wellness, clean beauty, and timeless minimalism.
+
+Every formulation is designed to deliver visible results while creating a luxurious sensory experience.
+
+
+---
+
+Why Customers Love VELVANA
+
+Feature Grid
+
+Clean Beauty Inspired
+
+Sulfate Free
+
+Vegan Friendly
+
+Cruelty Free
+
+Dermatologically Tested
+
+Designed for Sensitive Skin
+
+Luxury Fragrance Profiles
+
+Spa-Level Experience
+
+
+
+---
+
+Ingredient Philosophy Section
+
+Headline
+
+Powered by Skin-Loving Ingredients
+
+Ingredients to Highlight
+
+Hyaluronic Acid
+
+Shea Butter
+
+Vitamin E
+
+Oat Extract
+
+Coconut Milk
+
+Botanical Oils
+
+Sea Minerals
+
+Green Tea
+
+
+Add close-up ingredient photography with premium lighting.
+
+
+---
+
+Product Gallery Layout Ideas
+
+Layout Option 1 — Luxury Grid
+
+Large center feature bottle
+
+Smaller supporting products
+
+Floating shadows
+
+Minimal typography
+
+Beige/white background
+
+
+Layout Option 2 — Editorial Layout
+
+Magazine-inspired composition
+
+Layered text blocks
+
+Ingredient overlays
+
+Luxury campaign feel
+
+
+Layout Option 3 — Soft Minimal Carousel
+
+Floating product cards
+
+Soft gradients
+
+Rounded edges
+
+Smooth animations
+
+
+Layout Option 4 — Interactive Ritual Experience
+
+Products grouped by:
+
+Morning Ritual
+
+Hydration Ritual
+
+Recovery Ritual
+
+Night Ritual
+
+
+
+---
+
+Animation Recommendations
+
+Recommended Effects
+
+Slow floating product animation
+
+Smooth hover glow
+
+Gradient movement
+
+Soft fade transitions
+
+Scroll reveal animations
+
+Mouse parallax effect
+
+
+Avoid aggressive animations. Keep movement slow and elegant.
+
+
+---
+
+Typography Recommendations
+
+Headings
+
+Playfair Display
+
+Cormorant Garamond
+
+Bodoni Moda
+
+
+Body Text
+
+Inter
+
+Poppins
+
+DM Sans
+
+
+Branding Style
+
+Large luxury serif logo combined with clean modern body typography.
+
+
+---
+
+Color Palette Suggestions
+
+Neutral Luxury Palette
+
+Sand Beige: #D9C2AE
+
+Warm Ivory: #F5EFE7
+
+Sage Green: #B7C0B0
+
+Dusty Rose: #E9A8B1
+
+Lavender Mist: #C8B5D8
+
+Bronze Gold: #B08A58
+
+
+
+---
+
+Photography Direction
+
+Recommended Scenes
+
+Marble countertops
+
+Stone textures
+
+Water droplets
+
+Vanilla pods
+
+Botanical leaves
+
+Soft linen fabrics
+
+Spa environments
+
+Luxury bathroom interiors
+
+
+
+---
+
+E-Commerce Presentation Features
+
+Add These Sections
+
+Customer Reviews
+
+Before/After Texture Shots
+
+Ingredient Spotlights
+
+Product Bundles
+
+Subscription Option
+
+Best Sellers Carousel
+
+Limited Edition Collections
+
+
+
+---
+
+Suggested Collection Names
+
+Luxury Naming Ideas
+
+Velvet Ritual
+
+Bare Botanica
+
+Silk Restore
+
+Nude Hydration
+
+Luna Calm
+
+Aura Minerals
+
+Pure Renewal
+
+Orchid Therapy
+
+Vanilla Cashmere
+
+Botanical Glow
+
+
+
+---
+
+Product Variations for Presentation Mockups
+
+Variation Set 1
+
+Nude Beige
+
+Dusty Pink
+
+Sage Green
+
+Lavender Purple
+
+Bronze Gold
+
+Ivory White
+
+
+Variation Set 2
+
+Matte Black Luxury Edition
+
+Frosted Transparent Bottles
+
+Satin Metallic Collection
+
+Limited Marble Packaging
+
+
+Variation Set 3
+
+Travel Mini Collection:
+
+100ML Bottles
+
+Compact Tube Packaging
+
+Gift Box Sets
+
+Luxury Spa Kits
+
+
+
+---
+
+Homepage Conversion Sections
+
+Luxury Statement Banner
+
+"Designed to make daily rituals feel extraordinary."
+
+Trust Indicators
+
+10,000+ Happy Customers
+
+Dermatologist Approved
+
+Premium Ingredients
+
+Clean Formulations
+
+Cruelty Free
+
+
+Final CTA
+
+Headline
+
+Discover the Art of Modern Body Care
+
+Buttons
+
+Explore Collection
+
+Build Your Ritual
+
+
+
+---
+
+Presentation Strategy
+
+For investor/client presentation:
+
+Focus on:
+
+Strong luxury identity
+
+Consistent packaging system
+
+Premium minimalist design
+
+Scalability of product line
+
+Strong visual branding
+
+High-end e-commerce potential
+
+Social-media-ready aesthetic
+
+Retail shelf appeal
+
+
+The strongest direction for VELVANA is premium minimalist luxury with soft wellness aesthetics similar to modern skincare and boutique spa brands.
