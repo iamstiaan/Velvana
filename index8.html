@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velvana | Ocean Vanilla Ritual</title>
+    <title>Velvana | Premium Coastal Skincare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
@@ -11,6 +11,8 @@
             --beige: #e8d9c8;
             --brown: #5c4636;
             --gold: #d4a373;
+            --dark-brown: #3f2a1e;
+            --light-pink: #f5d5d0;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -40,28 +42,63 @@
             color: var(--brown);
             letter-spacing: 4px;
         }
+        nav a {
+            margin: 0 15px;
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--gold);
+        }
 
-        /* HERO - Based on 1st Image (Beige + Pink) */
+        /* HERO SECTION */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(92,70,54,0.45), rgba(92,70,54,0.45)), 
-                        url('https://i.imgur.com/placeholder.jpg') center/cover; /* Replace with your 1st image URL */
+            margin-top: 80px;
+            min-height: 70vh;
+            background: linear-gradient(135deg, #d4a373 0%, #c89a6a 50%, #b8855f 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1), transparent);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
         .hero-content h1 {
-            font-size: 4.2rem;
-            letter-spacing: 8px;
+            font-size: 4.5rem;
+            letter-spacing: 12px;
             margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         .hero-content p {
-            font-size: 1.35rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            opacity: 0.95;
+            letter-spacing: 1px;
+        }
+        .hero-content .tagline {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 2.5rem;
         }
         .btn {
             padding: 16px 48px;
@@ -72,69 +109,191 @@
             font-weight: 600;
             border-radius: 50px;
             cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
 
         .section {
-            padding: 100px 0;
+            padding: 120px 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
         .section-title {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: var(--brown);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
+
+        /* PREMIUM PRODUCTS GRID */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 40px;
-            padding: 0 20px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
         }
+
         .product-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
         .product-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.18);
         }
+
         .product-img {
-            height: 420px;
+            height: 480px;
             background-size: cover;
             background-position: center;
+            position: relative;
         }
+        .product-img.beige {
+            background: linear-gradient(135deg, #d4a373, #c89a6a);
+        }
+        .product-img.pink {
+            background: linear-gradient(135deg, #f5b5c8, #ed97b8);
+        }
+        .product-img.green {
+            background: linear-gradient(135deg, #b8d4c8, #a3c5b8);
+        }
+
         .product-info {
-            padding: 28px;
+            padding: 40px 32px;
             text-align: center;
+            background: #fafaf8;
         }
-        .product-info h3 {
+        .product-name {
             color: var(--brown);
-            font-size: 1.65rem;
-            margin-bottom: 8px;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .product-type {
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .product-description {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+        .product-size {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-weight: 500;
         }
         .price {
             color: var(--gold);
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            margin-bottom: 24px;
         }
+
         .add-btn {
-            margin-top: 15px;
             width: 100%;
-            padding: 14px;
+            padding: 16px 24px;
             background: var(--brown);
             color: white;
             border: none;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
         }
+        .add-btn:hover {
+            background: var(--dark-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* BENEFITS SECTION */
+        .benefits-section {
+            background: linear-gradient(135deg, #f5f3f0 0%, #eee9e3 100%);
+            padding: 100px 20px;
+            margin-top: 80px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .benefit-card {
+            text-align: center;
+        }
+        .benefit-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .benefit-card h3 {
+            color: var(--brown);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .benefit-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
         footer {
-            background: #3f2a1e;
+            background: var(--dark-brown);
             color: #ddd;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+        }
+        footer h2 {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+        }
+        footer p {
+            margin: 8px 0;
+            font-size: 1.05rem;
+        }
+        footer .tagline {
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
 </head>
@@ -144,21 +303,21 @@
         <nav>
             <div class="logo">VELVANA</div>
             <div>
-                <a href="#" style="margin:0 15px; color:var(--brown); text-decoration:none;">Shop</a>
-                <a href="#" style="margin:0 15px; color:var(--brown); text-decoration:none;">Rituals</a>
-                <a href="#" style="margin:0 15px; color:var(--brown); text-decoration:none;">Journal</a>
+                <a href="#collection">Shop</a>
+                <a href="#benefits">Rituals</a>
+                <a href="#footer">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- HERO - Branding Concept from 1st Image -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>VELVANA</h1>
-            <p>Salt Water Vanilla • Coastal Luxury Skincare</p>
-            <p style="font-size:1.1rem; opacity:0.95;">Where ocean minerals embrace warm vanilla — refined, radiant, ritualistic.</p>
+            <p>Premium Coastal Skincare</p>
+            <p class="tagline">Where ocean minerals embrace warm vanilla — refined, radiant, ritualistic.</p>
             <button class="btn" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
-                Explore the Collection
+                ✨ Explore the Collection
             </button>
         </div>
     </section>
@@ -168,46 +327,41 @@
         <h2 class="section-title">Signature Collection</h2>
         <div class="products-grid">
 
-            <!-- Product 1 - Beige Vanilla -->
+            <!-- Product 1: Nourishing Body Wash -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder1.jpg');"></div>
+                <div class="product-img beige"></div>
                 <div class="product-info">
-                    <h3>Salt Water Vanilla</h3>
-                    <p>Skin Reviving Serum Body Wash</p>
-                    <p class="price">$48 • 500 mL</p>
+                    <div class="product-type">• NOURISHING •</div>
+                    <h3 class="product-name">Body Wash</h3>
+                    <p class="product-description">Gently cleanses and nourishes for soft, healthy-looking skin. Daily care for all skin types.</p>
+                    <div class="product-size">500 mL</div>
+                    <p class="price">$48</p>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <!-- Product 2 - Purple Lavender -->
+            <!-- Product 2: Soothing Body Lotion -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder2.jpg');"></div>
+                <div class="product-img pink"></div>
                 <div class="product-info">
-                    <h3>Lavender Açaí Mood</h3>
-                    <p>Rose Refining & Calming Body Cleanser</p>
-                    <p class="price">$52 • 500 mL</p>
+                    <div class="product-type">• SOOTHING •</div>
+                    <h3 class="product-name">Body Lotion</h3>
+                    <p class="product-description">Hydrates and softens skin while calming and protecting its natural moisture barrier.</p>
+                    <div class="product-size">500 mL</div>
+                    <p class="price">$52</p>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <!-- Product 3 - Vanilla Ritual Oil -->
+            <!-- Product 3: Exfoliating Body Scrub -->
             <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder3.jpg');"></div>
+                <div class="product-img green"></div>
                 <div class="product-info">
-                    <h3>Nomadica Vanilla Ritual</h3>
-                    <p>Glow Body Oil</p>
-                    <p class="price">$65</p>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 4 - Sea Salt Duo -->
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('https://i.imgur.com/placeholder4.jpg');"></div>
-                <div class="product-info">
-                    <h3>Sea Salt & Sun Dew</h3>
-                    <p>Exfoliating Daily Cleanser</p>
-                    <p class="price">$55 • 500 mL</p>
+                    <div class="product-type">• EXFOLIATING •</div>
+                    <h3 class="product-name">Body Scrub</h3>
+                    <p class="product-description">Gently exfoliates to remove dead skin cells and reveal smoother, brighter skin.</p>
+                    <div class="product-size">500 mL</div>
+                    <p class="price">$55</p>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
@@ -215,10 +369,33 @@
         </div>
     </section>
 
-    <footer>
-        <p style="font-size: 2.2rem; margin-bottom: 10px;">VELVANA</p>
-        <p>Premium Coastal Skincare • Ocean Vanilla Ritual</p>
-        <p style="margin-top: 20px; opacity: 0.7;">© 2026 • Johannesburg, South Africa</p>
+    <!-- BENEFITS SECTION -->
+    <section class="benefits-section" id="benefits">
+        <h2 class="section-title">Why Choose Velvana?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🌊</div>
+                <h3>Ocean Minerals</h3>
+                <p>Infused with premium sea salt and coastal botanicals for radiant skin transformation.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>Sustainably sourced, cruelty-free, and ethically crafted for conscious beauty.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">✨</div>
+                <h3>Premium Quality</h3>
+                <p>Luxurious formulations designed for the modern ritual of self-care and wellness.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <h2>VELVANA</h2>
+        <p>Premium Coastal Skincare</p>
+        <p class="tagline">Salt Water Vanilla • Oceanic Luxury</p>
+        <p style="margin-top: 30px; opacity: 0.7;">© 2026 • Johannesburg, South Africa</p>
     </footer>
 
     <script>
@@ -229,4 +406,4 @@
         });
     </script>
 </body>
-  </html>
+</html>
